@@ -25,10 +25,10 @@
     <script>
         // 当我们点击了按钮，  div里面的文字会发生变化
         // 1. 获取元素 
-        var btn = document.querySelector('button');
+        var btn = document.querySelector('button');//获取当前第一个元素 这里为标签选择器 选择器动态传入 .class选择器 #ID选择器
         var div = document.querySelector('div');
         // 2.注册事件
-        btn.onclick = function() {
+        btn.onclick = function () {
             // div.innerText = '2019-6-6';
             div.innerHTML = getDate();
         }

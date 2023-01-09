@@ -20,11 +20,14 @@
         var div = document.querySelector('div');
         // div.innerText = '<strong>今天是：</strong> 2019';
         // 2. innerHTML 识别html标签 W3C标准 保留空格和换行的
-        div.innerHTML = '<strong>今天是：</strong> 2019';
+        div.innerHTML = '<a href="#">今天是：</a> 2019';
         // 这两个属性是可读写的  可以获取元素里面的内容
-        var p = document.querySelector('p');
-        console.log(p.innerText);
-        console.log(p.innerHTML);
+        // var p = document.querySelector('p');
+        // console.log(p.innerText);
+        // console.log(p.innerHTML);
+        var p = document.querySelector("p");
+        console.log(p.innerHTML);//读取所有返回标签 换行符 + 空格
+        console.log(p.innerText);//只读取文字 排除html标签 及换行符+空格
     </script>
 </body>
 
