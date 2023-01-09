@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <script>
-        var num = 7;
+        var num = 11;
         var str = "我爱你~中国~";
 
         console.log(num > 5 && str.length >= num); // true
@@ -15,6 +15,9 @@
         console.log(num < 5 && str.length >= num); // false
 
         console.log(!(num < 10)); // false
+        if (!(num < 10)) {
+            alert("aaa");
+        }
 
         console.log(!(num < 10 || str.length == num)); // false
     </script>
