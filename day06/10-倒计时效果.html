@@ -16,8 +16,11 @@
         //  h = parseInt(总秒数/ 60/60 %24)   //   计算小时
         //  m = parseInt(总秒数 /60 %60 );     //   计算分数
         //  s = parseInt(总秒数%60);            //   计算当前秒数
+        var date = new Date();
+        console.log(date);
         function countDown(time) {
-            var nowTime = +new Date(); // 返回的是当前时间总的毫秒数
+            var nowTime = image.png; // 返回的是当前时间总的毫秒数
+            console.log(nowTime);
             var inputTime = +new Date(time); // 返回的是用户输入时间总的毫秒数
             var times = (inputTime - nowTime) / 1000; // times是剩余时间总的秒数 
             var d = parseInt(times / 60 / 60 / 24); // 天
