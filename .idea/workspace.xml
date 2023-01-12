@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7fb429b7-e186-49d7-859f-cb7301576818" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/JsWeb/第一天/code/01-getElementById获取元素.html" beforeDir="false" afterPath="$PROJECT_DIR$/JsWeb/第一天/code/01-getElementById获取元素.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JsWeb/第一天/code/05-事件三要素.html" beforeDir="false" afterPath="$PROJECT_DIR$/JsWeb/第一天/code/05-事件三要素.html" afterDir="false" />
-    </list>
+    <list default="true" id="7fb429b7-e186-49d7-859f-cb7301576818" name="变更" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +24,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "settings.editor.selected.configurable": "ssh.settings"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
@@ -39,6 +36,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673484162904</updated>
       <workItem from="1673484164606" duration="149000" />
+      <workItem from="1673485001871" duration="46000" />
     </task>
     <servers />
   </component>

@@ -48,14 +48,16 @@
         var son = document.querySelector('.son');
         son.addEventListener('click', function() {
             alert('son');
-        }, false);
+        });
+
         var father = document.querySelector('.father');
         father.addEventListener('click', function() {
             alert('father');
-        }, false);
+        });
+
         document.addEventListener('click', function() {
             alert('document');
-        })
+        },true)
     </script>
 </body>
 

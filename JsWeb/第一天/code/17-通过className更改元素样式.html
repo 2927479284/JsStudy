@@ -7,17 +7,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        div {
-            width: 100px;
-            height: 100px;
-            background-color: pink;
-        }
-        
         .change {
             background-color: purple;
             color: #fff;
             font-size: 25px;
             margin-top: 100px;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
         }
     </style>
 </head>
@@ -28,7 +28,7 @@
     <script>
         // 1. 使用 element.style 获得修改元素样式  如果样式比较少 或者 功能简单的情况下使用
         var test = document.querySelector('div');
-        test.onclick = function() {
+        test.onclick = function () {
             // this.style.backgroundColor = 'purple';
             // this.style.color = '#fff';
             // this.style.fontSize = '25px';

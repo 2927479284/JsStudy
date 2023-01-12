@@ -6,27 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <style>
+        /* button{
+            disabled: true //非button的css样式，是button的一个属性
+        } */
+    </style>
 </head>
-
 <body>
-    <button>删除</button>
+    <button disabled="true">删除</button>
     <ul>
         <li>熊大</li>
         <li>熊二</li>
         <li>光头强</li>
     </ul>
     <script>
-        // 1.获取元素
-        var ul = document.querySelector('ul');
-        var btn = document.querySelector('button');
-        // 2. 删除元素  node.removeChild(child)
-        // ul.removeChild(ul.children[0]);
-        // 3. 点击按钮依次删除里面的孩子
-        btn.onclick = function() {
-            if (ul.children.length == 0) {
-                this.disabled = true;
-            } else {
-                ul.removeChild(ul.children[0]);
+        // // 1.获取元素
+        // var ul = document.querySelector('ul');
+        // var btn = document.querySelector('button');
+        // // 2. 删除元素  node.removeChild(child)
+        // // ul.removeChild(ul.children[0]);
+        // // 3. 点击按钮依次删除里面的孩子
+        // btn.onclick = function() {
+        //     if (ul.children.length == 0) {
+        //         this.disabled = true;//按钮禁止点击
+        //     } else {
+        //         ul.removeChild(ul.children[0]);
+        //     }
+        // }
+
+        //1.获取元素
+        var ul1 = document.querySelector("ul");//获取首个ul
+        var btn1 = document.querySelector("button");//获取首个按钮button
+        btn1.onclick = function(){
+            if(ul1.children.length == 0 ){
+                //ul标签下面没有子元素了 按钮禁止点击
+                btn1.disabled = true;
+            }else{
+                ul1.removeChild(ul1.children[0]);
             }
         }
     </script>

@@ -49,7 +49,7 @@
     <ul>
 
     </ul>
-    <script>
+    <script> 
         // 1. 获取元素
         var btn = document.querySelector('button');
         var text = document.querySelector('textarea');
@@ -73,7 +73,7 @@
                 for (var i = 0; i < as.length; i++) {
                     as[i].onclick = function() {
                         // node.removeChild(child); 删除的是 li 当前a所在的li  this.parentNode;
-                        ul.removeChild(this.parentNode);
+                        ul.removeChild(this.parentNode);// 父级节点
                     }
                 }
             }
