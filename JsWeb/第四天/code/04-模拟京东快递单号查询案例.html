@@ -55,26 +55,54 @@
         // 表单检测用户输入： 给表单添加键盘事件
         // 同时把快递单号里面的值（value）获取过来赋值给 con盒子（innerText）做为内容
         // 如果快递单号里面内容为空，则隐藏大号字体盒子(con)盒子
-        var con = document.querySelector('.con');
-        var jd_input = document.querySelector('.jd');
-        jd_input.addEventListener('keyup', function() {
-                // console.log('输入内容啦');
-                if (this.value == '') {
-                    con.style.display = 'none';
-                } else {
-                    con.style.display = 'block';
-                    con.innerText = this.value;
-                }
-            })
-            // 当我们失去焦点，就隐藏这个con盒子
-        jd_input.addEventListener('blur', function() {
+        // var con = document.querySelector('.con');
+        // var jd_input = document.querySelector('.jd');
+        // jd_input.addEventListener('keyup', function() {
+        //         // console.log('输入内容啦');
+        //         if (this.value == '') {
+        //             con.style.display = 'none';
+        //         } else {
+        //             con.style.display = 'block';
+        //             con.innerText = this.value;
+        //         }
+        //     })
+        //     // 当我们失去焦点，就隐藏这个con盒子
+        // jd_input.addEventListener('blur', function() {
+        //         con.style.display = 'none';
+        //     })
+        //     // 当我们获得焦点，就显示这个con盒子
+        // jd_input.addEventListener('focus', function() {
+        //     if (this.value !== '') {
+        //         con.style.display = 'block';
+        //     }
+        // })
+
+        var search = document.querySelector(".search");
+        var con = document.querySelector(".con")
+        var jd = document.querySelector(".jd")
+
+        jd.addEventListener('keyup',keyup1);
+        function keyup1(){
+            //1.判断当前输入框内容是否等于空
+            if(this.value==""){
                 con.style.display = 'none';
-            })
-            // 当我们获得焦点，就显示这个con盒子
-        jd_input.addEventListener('focus', function() {
-            if (this.value !== '') {
+            }else{
                 con.style.display = 'block';
+                con.innerText = this.value;
             }
-        })
+
+            //输入框失去焦点时,大盒子隐藏
+            jd.addEventListener('blur',function(){
+                con.style.display = 'none';
+            });
+            
+            //输入框获得焦点时，大盒子显示(前提是输入框里面得存在内容)
+            jd.addEventListener('focus',function(){
+                if(this.value !==''){
+                    con.style.display = 'block';
+                }
+            });
+
+        }
     </script>
 </body>

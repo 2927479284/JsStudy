@@ -12,9 +12,15 @@
     <img src="images/ad.jpg" alt="" class="ad">
     <script>
         var ad = document.querySelector('.ad');
-        setTimeout(function() {
+        // setTimeout(function() {
+        //     ad.style.display = 'none';
+        // }, 5000);
+
+        //1.设置一个定时器
+        setTimeout(function(){
+            console.log("广告清除");
             ad.style.display = 'none';
-        }, 5000);
+        },5000)
     </script>
 </body>
 
