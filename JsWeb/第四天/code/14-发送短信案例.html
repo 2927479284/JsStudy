@@ -16,23 +16,27 @@
         // 里面秒数是有变化的，因此需要用到定时器
         // 定义一个变量，在定时器里面，不断递减
         // 如果变量为0 说明到了时间，我们需要停止定时器，并且复原按钮初始状态
-        var btn = document.querySelector('button');
-        var time = 3; // 定义剩下的秒数
-        btn.addEventListener('click', function() {
-            btn.disabled = true;
-            var timer = setInterval(function() {
+
+        // 1.获取button标签
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", click);
+        function click() {
+            // 2.单击按钮的时候 按钮禁止
+            this.disabled = true;
+            var time = 10;
+            // 3.创建一个定时器
+            var id = setInterval(function () {
                 if (time == 0) {
-                    // 清除定时器和复原按钮
-                    clearInterval(timer);
+                    clearInterval(id);
+                    //this 这里不能使用 这里的this代表window  定时器是被浏览器所调用的
                     btn.disabled = false;
-                    btn.innerHTML = '发送';
+                    btn.innerHTML = "发送验证码";
                 } else {
-                    btn.innerHTML = '还剩下' + time + '秒';
+                    btn.innerHTML = "倒计时:" + time + "秒，可在次发送验证码";
                     time--;
                 }
             }, 1000);
-
-        })
+        }
     </script>
 </body>
 
