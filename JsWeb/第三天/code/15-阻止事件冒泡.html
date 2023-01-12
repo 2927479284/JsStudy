@@ -38,13 +38,14 @@
         son.addEventListener('click', function(e) {
             alert('son');
             e.stopPropagation(); // stop 停止  Propagation 传播
-            e.cancelBubble = true; // 非标准 cancel 取消 bubble 泡泡
+            // e.cancelBubble = true; // 非标准 cancel 取消 bubble 泡泡
         }, false);
 
         var father = document.querySelector('.father');
         father.addEventListener('click', function() {
             alert('father');
-        }, false);
+        });
+
         document.addEventListener('click', function() {
             alert('document');
         })
