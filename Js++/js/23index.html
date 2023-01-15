@@ -19,21 +19,29 @@
         // })(1);
 
 
-        function test() {
-            var arr = [];
-            for (var index = 0; index < 10; index++) {
-                (function (a) {
-                    arr[a] = function () {
-                        document.write(a + " ");
-                    }
-                }(index));
-            }
-            return arr;
+        // function test() {
+        //     var arr = [];
+        //     for (var index = 0; index < 10; index++) {
+        //         (function (a) {
+        //             arr[a] = function () {
+        //                 document.write(a + " ");
+        //             }
+        //         }(index));
+        //     }
+        //     return arr;
+        // }
+        // var myarr = test();
+        // for (var index = 0; index < 10; index++) {
+        //     myarr[0]();
+        // }
+        // function a() { };
+        // console.log(typeof (a));
+
+        var a = 10;
+        if (function b() { }) {
+            a += typeof (b);
         }
-        var myarr = test();
-        for (var index = 0; index < 10; index++) {
-            myarr[0]();
-        }
+
     </script>
 
 </body>
