@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // A.prototype.name = "张三";
+        // function A() { }
+        // var a = new A();
+        // A.prototype = {
+        //     name: "李四"
+        // }
+        // var a1 = new A()
+        // console.log(a, a1);
+
+        function a() {
+            var test = function () {
+                console.log("test方法执行成功");
+            };
+            var Jisuan = function (opt) {
+                this.x = opt.first;
+                this.y = opt.two;
+            }
+            Jisuan.prototype = {
+                add: function () {
+                    return this.x + this.y;
+                },
+                jian: function () {
+                    return this.x - this.y;
+                },
+                cheng: function () {
+                    return this.x * this.y;
+                },
+                chu: function () {
+                    return this.x / this.y;
+                }
+            }
+            window.test1 = test;
+            Window.Jisuan1 = Jisuan //这里赋值的是构造函数
+        }
+        a();
+        test1();
+        new Jisuan1({ first: 1, two: 2 });
+
+        // var Jisuan1 = function () { };
+        // //作业 写一个插件 传任意两个数字 实现加减乘除
+        // (function () {
+        //     var Jisuan = function (opt) {
+        //         this.x = opt.first;
+        //         this.y = opt.two;
+        //     }
+        //     Jisuan.prototype = {
+        //         add: function () {
+        //             return this.x + this.y;
+        //         },
+        //         jian: function () {
+        //             return this.x - this.y;
+        //         },
+        //         cheng: function () {
+        //             return this.x * this.y;
+        //         },
+        //         chu: function () {
+        //             return this.x / this.y;
+        //         }
+        //     }
+        //     Window.Jisuan1 = Jisuan //这里赋值的是构造函数
+        // })();
+
+        // var a = new Jisuan1({
+        //     first: 2,
+        //     two: 1
+        // });
+        // console.log(a.add());
+        // console.log(a.jian());
+        // console.log(a.cheng());
+        // console.log(a.chu());
+    </script>
+</body>
+
+</html>
