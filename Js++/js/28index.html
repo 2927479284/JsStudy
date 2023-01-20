@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Car(pl){
+            this.pl = pl;
+        }
+
+        function Person(name,age,pl){
+            Car.apply(this,[pl]);
+            this.info=function(){
+                console.log("年龄:"+age+" 名字:"+name+" 排量:"+pl+"的车");
+            }
+        }
+        
+       var person = new Person("张三",18,"2.0L");
+       person.info();
+    </script>
+</body>
+</html>
