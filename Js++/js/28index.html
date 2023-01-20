@@ -8,19 +8,33 @@
 </head>
 <body>
     <script>
-        function Car(pl){
-            this.pl = pl;
-        }
+    //     function Car(pl){
+    //         this.pl = pl;
+    //     }
 
-        function Person(name,age,pl){
-            Car.apply(this,[pl]);
-            this.info=function(){
-                console.log("年龄:"+age+" 名字:"+name+" 排量:"+pl+"的车");
-            }
-        }
+    //     function Person(name,age,pl){
+    //         Car.apply(this,[pl]);
+    //         this.info=function(){
+    //             console.log("年龄:"+age+" 名字:"+name+" 排量:"+pl+"的车");
+    //         }
+    //     }
         
-       var person = new Person("张三",18,"2.0L");
-       person.info();
+    //    var person = new Person("张三",18,"2.0L");
+    //    person.info();
+
+
+    Person.prototype.name = "人"
+    function Person(){}
+    var person = new Person();
+
+    Teacher.prototype = person;
+    function Teacher(){}
+    var teacher = new Teacher();
+
+    Student.prototype = teacher;
+    function Student(){}
+    var student = new Student();
+    console.log(student);
     </script>
 </body>
 </html>
