@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        var person = {
+            // name: "名字",
+            // age: "年龄",
+            // sex: "性别",
+            // height: "身高",
+            children: {
+                first: {
+                    name: "first名字",
+                    age: "first年龄"
+                },
+                two: {
+                    name: "two名字",
+                    age: "two年龄"
+                }
+            },
+            car: ['车1', '车2']
+        }
+        // var tar = clone(person);
+        // tar.children.three = {
+        //     name: "three名字",
+        //     age: "three年龄"
+        // }
+        // console.log(person);
+        // console.log(tar);
+        //浅拷贝: 存在问题 内置对象无法被拷贝 并且一旦修改 person对象也会被修改
+        // function clone(origin, target) {
+        //     var target1 = target || {};
+        //     for (var key in origin) {
+        //         target1[key] = origin[key];
+        //     }
+        //     return target1;
+        // }
+
+        console.log(Object.prototype.toString.call(person.car));
+        console.log(typeof (person.car));
+        // console.log(typeof (person.name));
+        // console.log(typeof (person.children.first));
+        var tar = deepClone(person)
+        tar.children.three = {
+            name: "three名字",
+            age: "three年龄"
+        }
+        console.log(person);
+        console.log(tar);
+        // 深拷贝
+        function deepClone(origin, target) {
+            var tar = target || {};
+            str = Object.prototype.toString;
+            arrty = '[object Array]';
+            for (var key in origin) {
+                if (origin.hasOwnProperty(key)) {
+                    if (typeof (origin[key]) === "object" && origin[key] !== null) {
+                        if (str(origin[key]) === arrty) {
+                            tar[key] = [];
+                        } else {
+                            tar[key] = {};
+                        }
+                        deepClone(origin[key], tar[key]);
+                    } else {
+                        tar[key] = origin[key];
+                    }
+                }
+            }
+            return tar;
+        }
+
+
+        // var aa = function () {
+        //     console.log(1);
+        // }
+        // function aa() {
+        //     console.log(2);
+        // }
+        // aa();
+
+        function Foo() {
+            getName = function () {
+                console.log(1);
+            }
+            return this;
+        }
+        Foo.getName = function () {
+            console.log(2);
+        }
+        Foo.prototype.getName = function () {
+            console.log(3);
+        }
+        var getName = function () {
+            console.log(4);
+        }
+        function getName() {
+            console.log(5);
+        }
+        Foo.getName();//2
+        getName()//4
+        Foo().getName();
+        new Foo.getName();
+        new Foo().getName();
+        new new Foo().getName();
+
+    </script>
+</body>
+
+</html>
