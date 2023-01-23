@@ -12,21 +12,127 @@
 
 
     <script>
-        Person.prototype.name = "张三";
-        function Person() {
-            this.age = 188;
+        // Person.prototype.name = "张三";
+        // function Person() {
+        //     this.age = 188;
 
+        // }
+        // var person = new Person()
+        // console.log(Person.prototype);
+
+        // Student.prototype = person;
+        // function Student() {
+
+        // }
+        // var a = new Student();
+        // console.log(a);
+
+        // Teacher.prototype.name = "张三";
+        // function Teacher() {}
+
+        // Buffer.prototype = Teacher.prototype;
+        // function Buffer() {
+        //     this.n = "我是缓冲层"
+        // }
+        // var buffer = new Buffer();
+
+        // Student.prototype = buffer;
+        // function Student() { }
+        // var student = new Student();
+        // Student.prototype.age = "188";
+        // console.log(student);
+        // console.log(buffer);
+        // var teacher = new Teacher();
+        // console.log(teacher.age);
+        // var inherit = (function () {
+        //     var Buffer = function () { };
+        //     return function (Target, Origin) {
+        //         Buffer.prototype = Origin.prototype;
+        //         Target.prototype = new Buffer();
+        //         Target.prototype.constructor = Target;
+        //         Target.prototype.super_class = Origin;
+        //     }
+        // })();
+
+        // Teacher.prototype.name = "张三";
+        // function Teacher() { }
+
+        // // Student.prototype.name = "李四"
+        // function Student() { }
+        // inherit(Student, Teacher);
+        // var student = new Student()
+        // Student.prototype.name = "李四"
+        // console.log(student);
+
+        // var inherit = (function () {
+        //     var Buffer = function () { };
+        //     return function (Target, Origin) {
+        //         Buffer.prototype = Origin.prototype;
+        //         Target.prototype = new Buffer();
+        //         Target.prototype.constructor = Target;
+        //         Target.prototype.super_class = Origin;
+        //     }
+        // })();
+        // var init = (function () {
+        //     var Pro = function () { }
+        //     Pro.prototype = {
+        //         name: "程序员",
+        //         tool: "计算机",
+        //         work: "编写程序",
+        //         time: "10小时",
+        //         say: function () {
+        //             console.log(this.myName);
+        //         }
+        //     }
+        //     function QianDuan() { };
+        //     function HouDuan() { };
+        //     inherit(QianDuan, Pro);
+        //     inherit(HouDuan, Pro);
+        //     QianDuan.prototype.lang = ["HTML", "CSS", "JS"];
+        //     QianDuan.prototype.myName = "前端";
+        //     HouDuan.prototype.lang = ["JAVA", "JAVA", "JAVA"];
+        //     HouDuan.prototype.myName = "后端";
+        //     return {
+        //         qianduan: QianDuan,
+        //         houduan: HouDuan
+        //     }
+        // })();
+        // var qianduan = new init.qianduan()
+        // console.log(qianduan);
+        // console.log(qianduan.say());
+
+
+        var inherit = (function () {
+            var Buffer = function () { };
+            return function (Target, Origin) {
+                Buffer.prototype = Origin.prototype;
+                Target.prototype = new Buffer();
+                Target.prototype.constructor = Target;
+                Target.prototype.super_class = Origin;
+            }
+        })();
+        function Person() { };
+        Person.prototype = {
+            name: "人",
+            sex: "男/女",
+            say: function () {
+                console.log(this.myName);
+                this.sayy()
+            }
         }
-        var person = new Person()
-        console.log(Person.prototype);
 
-        Student.prototype = person;
         function Student() {
-
+            this.myName = "student 默认名",
+                this.sayy = function () {
+                    console.log("aaa");
+                }
         }
-        var a = new Student();
-        console.log(a);
+        Student.prototype = Person.prototype;
+        var student = new Student()
+        console.log(student);
+        student.say();
     </script>
 </body>
+
 
 </html>
