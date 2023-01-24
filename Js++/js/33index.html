@@ -10,6 +10,54 @@
 
 <body>
 
+    <script>
+        // 复习
+        // function Foo() {
+        //     getName = function () {
+        //         console.log(1);
+        //     }
+        //     return this;
+        // }
+        // Foo.getName = function () {
+        //     console.log(2);
+        // }
+        // Foo.prototype.getName = function () {
+        //     console.log(3);
+        // }
+        // var getName = function () {
+        //     console.log(4);
+        // }
+        // function getName() {
+        //     console.log(5);
+        // }
+        // new Foo.getName();
+        // new Foo().getName();
+        // new new Foo().getName();
+
+
+        // [2,3) 1.起始位置下标，2.要取到的下标(比起始位置下标要大)
+        // var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        // var arr1 = arr.slice(-3, -3);
+        // console.log(arr1);
+
+        // 阿里笔试题
+        var obj = {
+            "2": 2,
+            "3": 3,
+            // "length": 2,
+            "splice": Array.prototype.splice,
+            "push": Array.prototype.push
+        }
+        Array.prototype.push = function (e) {
+            this[this.length] = e;
+            this.length++;
+        }
+        obj.push(1);
+        obj.push(2);
+        console.log(obj);// 结果是多少？为什么？
+
+    </script>
+
 </body>
 
 </html>

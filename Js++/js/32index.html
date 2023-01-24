@@ -15,12 +15,12 @@
         // arr.unshift("aaa", "bbb");
         // 用splice方法重写数组的原型上的unshift方法myUnshift
         Array.prototype.myUnshift = function () {
-            // console.log(arguments.length - 1);
             for (var index = arguments.length - 1; index >= 0; index--) {
                 this.splice(0, 0, arguments[index]);
             }
+            return this.length
         }
-        arr.myUnshift("ccc", "ddd", "eee", "fff");
+        arr.myUnshift("a", "b", "c", "d");
     </script>
 </body>
 
