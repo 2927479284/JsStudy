@@ -106,10 +106,10 @@
         }
         Foo.getName();//2
         getName()//4
-        Foo().getName();
-        new Foo.getName();
-        new Foo().getName();
-        new new Foo().getName();
+        Foo().getName();//1
+        new Foo.getName();//2
+        new Foo().getName();//1
+        new new Foo().getName();//3
 
     </script>
 </body>
