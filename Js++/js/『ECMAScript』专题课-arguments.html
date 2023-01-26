@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>『ECMAScript』专题课-垃圾回收机制等</title>
+</head>
+
+<body>
+
+    <script>
+        /***
+         * 垃圾回收机制: mark and sweep 
+        */
+        function test() {
+            var a = 1; // 进入环境
+        }
+        test(); // 执行完，离开环境
+    </script>
+</body>
+
+</html>
