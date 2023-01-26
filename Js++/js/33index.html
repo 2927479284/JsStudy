@@ -44,16 +44,16 @@
         var obj = {
             "2": 2,
             "3": 3,
-            // "length": 2,
+            "length": 2,
             "splice": Array.prototype.splice,
             "push": Array.prototype.push
         }
-        Array.prototype.push = function (e) {
-            this[this.length] = e;
-            this.length++;
-        }
-        obj.push(1);
-        obj.push(2);
+        // Array.prototype.push = function (e) {
+        //     this[this.length] = e;
+        //     this.length++;
+        // }
+        obj.push(4);
+        obj.push(5);
         console.log(obj);// 结果是多少？为什么？
 
     </script>

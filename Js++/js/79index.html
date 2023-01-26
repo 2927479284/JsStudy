@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p {
+            position: relative;
+            left: 100px;
+            top: 100px;
+            width: 300px;
+            height: 300px;
+            background-color: red;
+            overflow: hidden;
+        }
+
+        .p1 {
+            width: 200px;
+            height: 200px;
+            margin: 30px;
+            background-color: green;
+        }
+
+        .b1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            margin: 30px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="p">
+        <div class="p1">
+            <div class="b1"></div>
+        </div>
+    </div>
+
+    <script>
+        var p = document.getElementsByClassName('p')[0];
+        var p1 = document.getElementsByClassName('p1')[0];
+        var b1 = document.getElementsByClassName('b1')[0];
+        function getElemDocumentPostion(el) {
+            var parent = el.offsetParent,
+                offsetLeft = el.offsetLeft,
+                offsetTop = el.offsetTop;
+            while (parent) {
+                offsetLeft += parent.offsetLeft;
+                offsetTop += parent.offsetTop;
+                parent = parent.offsetParent;
+            }
+            return {
+                left: offsetLeft,
+                top: offsetTop
+            }
+        }
+    </script>
+</body>
+
+</html>

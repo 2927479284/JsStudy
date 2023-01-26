@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="boxx">
+        <!-- <a href=""></a> -->
+    </div>
+
+    <script>
+        // var div = document.getElementsByTagName('div')[0];
+        // console.log(div.hasChildNodes());// 属性节点不算在内
+
+        // var ul = document.getElementsByTagName('ul')[0];
+        // ul.childNodes.length
+
+
+        // 作业1.原型上编程  hasChild 判断父级元素是否有子[元素节点]
+        /** 查询传入指定元是否有子[元素节点]
+         * this -> 传入指定元素
+         * return Boolean
+         */
+        HTMLElement.prototype.hasChild = function () {
+            var arr = [],
+                eleLength = this.childNodes.length,
+                flag = false;
+            for (let index = 0; index < eleLength; index++) {
+                if (this.childNodes[index].nodeType === 1) {
+                    arr.push(this.childNodes[index]);
+                    flag = true;
+                    break;
+                }
+            }
+            return flag;
+        }
+        var div1 = document.getElementsByClassName('boxx')[0];
+        console.log(div1.hasChild());// flase 因为当前div下不存在【元素节点】
+
+        // 作业2.在原型上编程
+        // 寻找兄弟【元素节点】
+        // 参数N为正数，找之后的第N个
+        // 参数N为负数，找之前的第N个
+        // 参数N为零，找到自己
+        HTMLElement.prototype.findBrother = function (num) {
+            if (num > 0) {
+
+            }
+
+        }
+
+
+            // 作业3.用纯js写出以下表格
+            // <div id="box">
+            // <ul class="list">
+            // <li class="list-item">1</li>
+            // <li class="list-item">2</li>
+            // <li class="list-item">3</li>
+            // <li class="list-item">4</li>
+            // <li class="list-item">5</li>
+            // </ul>
+            // </div >
+
+            ; (function () {
+                var div = document.createElement('div');
+                var ul = document.createElement('ul');
+                for (let index = 0; index < 5; index++) {
+                    var li = document.createElement('li');
+                    li.innerHTML = index + 1;
+                    li.className = "list-item";
+                    ul.appendChild(li);
+                }
+                div.className = "box";
+                ul.className = "list";
+                div.appendChild(ul);
+                document.body.appendChild(div);
+            })();
+
+        // 作业4.遍历一个父级元素下面的所有子【元素节点】
+
+        // 作业5.原型上封装insertAfte方法s
+
+        // 作业6.子元素逆序
+    </script>
+</body>
+
+</html>

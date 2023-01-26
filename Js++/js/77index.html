@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>
+            <!--我是注释-->
+            <a href="#">我是a标签</a>
+            <p>我是p标签</p>
+            <span>我是span标签</span>
+        </li>
+    </ul>
+    <script>
+        // 元素节点 -> 1
+        // 属性节点 -> 2
+        // 文本节点 -> 3
+        // 注释节点 -> 8
+        // document -> 9
+        // DocumentFragment -> 11
+        var li = document.getElementsByTagName("li")[0];
+        // var ul = document.getElementsByTagName("ul")[0];
+        // // 获取 li的父节点
+        // var node = li.parentNode;
+        // console.log(node);
+        // // 获取childnode
+        // console.log(li.childNodes.length);//9
+        // console.log(ul.childNodes.length);//3
+        // console.log(li.childNodes);
+
+        // nodeName  -> 只读
+        // nodeValue -> 可读写
+        // nodeType -> 只读
+
+        // 作业1 在原型编程 children -> childNodes
+        // 遍历任意一个父元素，找到他的子元素节点
+        // 有数字参数 -> 某一个对应的子元素
+        // 无数字参数 -> 子元素对应的集合
+
+        // function bianli(opt) {
+        //     this.ele = opt.ele;
+        //     this.num = opt.num !== null ? opt.num : 0;
+        //     this.findBianLi(ele, num)
+        // }
+        HTMLElement.prototype.findBianLi = function (num = 0) {
+            var arr = [],
+                child = [];
+            for (var index = 0; index < this.childNodes.length; index++) {
+                if (this.childNodes[index].nodeType === 1) {
+                    arr.push(this.childNodes[index]);
+                }
+            }
+            if (num == 0) {
+                return arr;
+            } else {
+                return arr[num];
+            }
+        }
+
+        console.log(li.findBianLi(1));
+    </script>
+</body>
+
+</html>
