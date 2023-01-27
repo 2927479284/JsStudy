@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom间接操作css</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .dropdown {
+            position: relative;
+            width: 200px;
+            height: 50px;
+            background-color: #000;
+        }
+
+        .dropdown::after {
+            content: "";
+            display: table;
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 15px;
+            height: 15px;
+            background-image: url("img/arrow-down.png");
+            background-size: 100%, 100%;
+            background-repeat: no-repeat;
+        }
+
+        .dropdown .list {
+            display: none;
+        }
+
+        .dropdown a {
+            display: block;
+        }
+
+        .dropdown .main {
+            height: 100%;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+        }
+
+        .dropdown .item {
+            height: 40px;
+            background-color: #333;
+        }
+
+        .dropdown .item a {
+            height: 100%;
+            color: #999;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .dropdown:hover .list {
+            display: block;
+        }
+
+        .dropdown.up::after {
+            background-image: url("img/arrow-top.png");
+        }
+
+        .dropdown .item:hover {
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dropdown">
+        <a href="#" class="main">下拉菜单</a>
+        <ul class="list">
+            <li class="item"><a href="">菜单1</a></li>
+            <li class="item"><a href="">菜单2</a></li>
+            <li class="item"><a href="">菜单3</a></li>
+            <li class="item"><a href="">菜单4</a></li>
+            <li class="item"><a href="">菜单5</a></li>
+        </ul>
+    </div>
+
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown")[0];
+        olist = eleChildren(dropdown)[1];
+
+        dropdown.onmouseenter = function () {
+            olist.style.display = "block";
+            this.className += " up";
+        }
+        dropdown.onmouseleave = function () {
+            olist.style.display = "none";
+            this.className = "dropdown";
+        }
+
+
+        // 获取指定元素下的所有 元素节点 node.nodeType === 1
+        function eleChildren(node) {
+            var temp = {
+                'length': 0,
+                'push': Array.prototype.push,
+                'splice': Array.prototype.splice
+            };
+            var children = node.childNodes,
+                len = children.length,
+                item;
+            for (var index = 0; index < len; index++) {
+                item = children[index];
+                if (item.nodeType === 1) {
+                    temp.push(item);
+                }
+            }
+
+            return temp;
+        }
+    </script>
+</body>
+
+</html>
